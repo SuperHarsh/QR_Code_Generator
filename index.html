@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header text-center">
+                <h1>QR Code Generator</h1>
+            </div>
+            <div class="card-body p-6">
+                <div class="form-group">
+                    <label for="inputType" class="font-semibold">Input Type:</label>
+                    <select id="inputType" class="form-control" required>
+                        <option value="url">URL</option>
+                        <option value="text">Text</option>
+                        <option value="tel">Phone Number</option>
+                        <option value="email">Email</option>
+                        <option value="address">Address</option>
+                        <option value="location">Location</option>
+                        <option value="wifi">Wi-Fi</option>
+                    </select>
+                </div>
+                <div id="inputFields" class="form-group">
+                    <input type="text" id="inputValue" class="form-control" placeholder="Enter URL" required>
+                </div>
+                <div class="form-group">
+                    <label for="qrCodeSize" class="font-semibold">Size(px):</label>
+                    <input type="number" id="qrCodeSize" class="form-control" value="256" required>
+                </div>
+                <div class="form-group">
+                    <label for="qrCodeBgColor" class="font-semibold">Background Color:</label>
+                    <input type="color" id="qrCodeBgColor" class="form-control" value="#ffffff" required>
+                </div>
+                <div class="form-group">
+                    <label for="qrCodeFgColor" class="font-semibold">Foreground Color:</label>
+                    <input type="color" id="qrCodeFgColor" class="form-control" value="#000000" required>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div id="qrcode" class="text-center mb-4 mt-4"></div>
+                </div>
+                <div class="text-center">
+                    <button id="generateButton" class="btn mr-2"><span>Generate QR Code</span></button>
+                    <button id="downloadButton" class="btn"><span>Download QR Code</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-toBlob.js/0.4.0/canvas-toBlob.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
